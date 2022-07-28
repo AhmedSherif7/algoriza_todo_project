@@ -79,8 +79,10 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
             } else if (state is TaskEndTimeChangeState) {
               _endTimeController.text = cubit.taskEndTime.formatTime();
             } else if (state is TaskRemindChangeState) {
-              _remindController.text =
-                  context.read<CreateTaskCubit>().taskRemind.getTaskReminder();
+              _remindController.text = context
+                  .read<CreateTaskCubit>()
+                  .taskRemind
+                  .getTaskReminderMinutes();
             } else if (state is TaskRepeatChangeState) {
               _repeatController.text =
                   context.read<CreateTaskCubit>().taskRepeat;

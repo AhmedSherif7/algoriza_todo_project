@@ -9,8 +9,8 @@ class ScheduleTaskListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final taskTime = 'From ${task.startTime.getStringTime()} '
-        'to ${task.endTime.getStringTime()}';
+    final taskTime = 'From ${task.startTime.getTimeOfDayString()} '
+        'to ${task.endTime.getTimeOfDayString()}';
 
     return Container(
       padding: const EdgeInsets.all(16.0),

@@ -21,7 +21,7 @@ class TaskRemindRadioOption extends StatelessWidget {
           onChanged: (value) {
             context.read<CreateTaskCubit>().changeTaskRemind(value!);
           },
-          title: Text(value.getTaskReminder()),
+          title: Text(value.getTaskReminderMinutes()),
         );
       },
     );

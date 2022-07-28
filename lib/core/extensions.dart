@@ -14,10 +14,8 @@ extension TaskColor on int {
         return const Color(0xff42A0FF);
     }
   }
-}
 
-extension TaskReminder on int {
-  String getTaskReminder() {
+  String getTaskReminderMinutes() {
     switch (this) {
       case 0:
         return 'None';
@@ -33,29 +31,39 @@ extension TaskReminder on int {
         return '1 day early';
     }
   }
-}
 
-extension TaskCompleted on int {
   bool isTaskCompleted() {
     return this == 1;
   }
-}
 
-extension TaskFavorite on int {
   bool isTaskFavorite() {
     return this == 1;
-  }
-}
-
-extension FormtDateFromDateTime on DateTime {
-  String formatDate() {
-    return DateFormat('dd-MMM-yyyy').format(this);
   }
 }
 
 extension FormtDateFromString on String {
   String formatDate() {
     return DateFormat('dd-MMM-yyyy').format(DateTime.parse(this));
+  }
+
+  TimeOfDay getTimeOfDay() {
+    final hours = substring(10, 12);
+    final minutes = substring(13, 15);
+
+    return TimeOfDay(hour: int.parse(hours), minute: int.parse(minutes));
+  }
+
+  String getTimeOfDayString() {
+    final hours = substring(10, 12);
+    final minutes = substring(13, 15);
+
+    return '$hours:$minutes';
+  }
+}
+
+extension FormtDateFromDateTime on DateTime {
+  String formatDate() {
+    return DateFormat('dd-MMM-yyyy').format(this);
   }
 }
 
@@ -76,23 +84,5 @@ extension FormatTaskTime on TimeOfDay {
     }
 
     return result;
-  }
-}
-
-extension GetTimeOfDay on String {
-  TimeOfDay getTime() {
-    final hours = substring(10, 12);
-    final minutes = substring(13, 15);
-
-    return TimeOfDay(hour: int.parse(hours), minute: int.parse(minutes));
-  }
-}
-
-extension GetTime on String {
-  String getStringTime() {
-    final hours = substring(10, 12);
-    final minutes = substring(13, 15);
-
-    return '$hours:$minutes';
   }
 }

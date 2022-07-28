@@ -1,6 +1,6 @@
 # Todo Project  
 
-## Vedio  
+## Video  
 
 https://user-images.githubusercontent.com/42899531/181477829-ca6cbc88-88ed-4886-a88f-5145980f20f7.mp4
 

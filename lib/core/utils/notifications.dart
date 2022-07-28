@@ -137,7 +137,7 @@ DateTime _getTaskFirstNotificationDateTime(Task task) {
 }
 
 DateTime _getTaskRemindDateTime(Task task) {
-  final taskTime = task.startTime.getTime();
+  final taskTime = task.startTime.getTimeOfDay();
   final minutesRemind = _getMinutesBeforeTaskTime(task.remindMinutes);
   final remindDateTime = DateTime.parse(task.date)
       .add(
