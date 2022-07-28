@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-extension TaskColor on int {
+extension TaskEx on int {
   Color getTaskColor() {
     switch (this) {
       case 0:
@@ -41,7 +41,7 @@ extension TaskColor on int {
   }
 }
 
-extension FormtDateFromString on String {
+extension FormtDateAndTimeFromString on String {
   String formatDate() {
     return DateFormat('dd-MMM-yyyy').format(DateTime.parse(this));
   }
